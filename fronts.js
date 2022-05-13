@@ -18,16 +18,27 @@ class SLL {
         this.head = newNode;
         return this.head;
     }
+
+    // 2. Remove Front - Write a method to remove the head node and return the new list head node. If the list is empty, return null.
+
+    removeFront() {
+        if (this.head == null) { //to no excute anything this is empty
+            return this.head;
+        }
+        let removeNode = this.head; // to create a variable to hold the node we're going to move
+        this.head = removeNode.next; //moving the head to ths next head in line
+        removeNode.next = null; //to point the arrow to nothing(away from the next node)
+        return this.head;
+    }
 }
 let mySLL = new SLL(); //to start us off with an empty list
+
 mySLL.addFront(10);
 mySLL.addFront(8);
 mySLL.addFront(3);
-
+mySLL.removeFront();
 console.log(mySLL);
-console.log(mySLL.head.next);//to print the second node
-
-// 2. Remove Front - Write a method to remove the head node and return the new list head node. If the list is empty, return null.
+// console.log(mySLL.head.next);//to print the second node
 
 
 
