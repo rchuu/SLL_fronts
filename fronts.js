@@ -1,4 +1,4 @@
-// 1. Add front - Write a method that accepts a value and create a new node, assign it to the list head, and return a pointer to the new head node.
+
 
 class SLLnode {
     constructor(val) {
@@ -11,6 +11,8 @@ class SLL {
     constructor() {
         this.head = null;
     }
+
+    // 1. Add front - Write a method that accepts a value and create a new node, assign it to the list head, and return a pointer to the new head node.
 
     addFront(value) {
         let newNode = new SLLnode(value);
@@ -30,6 +32,17 @@ class SLL {
         removeNode.next = null; //to point the arrow to nothing(away from the next node)
         return this.head;
     }
+
+    // 3. Front - Write a method to return the value (not the node) at the head of the list. If the list is empty, return null.
+    front() {
+        if (this.head == null) {
+            return null;
+        } else {
+            return this.head.value;
+        }
+        // or use
+        return this.head ? this.head.value : null;
+    }
 }
 let mySLL = new SLL(); //to start us off with an empty list
 
@@ -42,5 +55,5 @@ console.log(mySLL);
 
 
 
-// 3. Front - Write a method to return the value (not the node) at the head of the list. If the list is empty, return null.
+
 
